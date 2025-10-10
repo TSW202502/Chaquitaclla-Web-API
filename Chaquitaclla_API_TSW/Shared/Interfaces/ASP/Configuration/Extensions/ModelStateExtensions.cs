@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
 
-namespace Chaquitaclla_API_TSW.Shared.Infrastructure.Interfaces.ASP.Configuration.Extensions;
+namespace Chaquitaclla_API_TSW.Shared.Interfaces.ASP.Configuration.Extensions;
 
 public static class ModelStateExtensions
 {

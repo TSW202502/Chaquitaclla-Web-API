@@ -1,7 +1,7 @@
-﻿using Chaquitaclla_API_TSW.Shared.Infrastructure.Interfaces.ASP.Configuration.Extensions;
+﻿using Chaquitaclla_API_TSW.Shared.Interfaces.ASP.Configuration.Extensions;
 using Microsoft.AspNetCore.Mvc.ApplicationModels;
 
-namespace Chaquitaclla_API_TSW.Shared.Infrastructure.Interfaces.ASP.Configuration;
+namespace Chaquitaclla_API_TSW.Shared.Interfaces.ASP.Configuration;
 
 public class KebabCaseRouteNamingConvention: IControllerModelConvention
 {
