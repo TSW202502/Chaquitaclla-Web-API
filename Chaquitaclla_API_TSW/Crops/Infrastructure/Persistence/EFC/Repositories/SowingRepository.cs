@@ -1,4 +1,5 @@
 ﻿using Chaquitaclla_API_TSW.Crops.Domain.Model.Aggregates;
+using Chaquitaclla_API_TSW.Crops.Domain.Model.Entities;
 using Chaquitaclla_API_TSW.Crops.Domain.Repositories;
 using Chaquitaclla_API_TSW.Shared.Infrastructure.Persistence.EFC.Configuration;
 using Chaquitaclla_API_TSW.Shared.Infrastructure.Persistence.EFC.Repositories;
@@ -21,5 +22,20 @@ public class SowingRepository : BaseRepository<Sowing>, ISowingRepository
     {
     Context.Set<Sowing>().Update(sowing);
     await Context.SaveChangesAsync();
+    }
+
+    public async Task<IEnumerable<Product>> FindProductsBySowing(int sowingId)
+    {
+        var productsBySowing = await Context.Set<ProductsBySowing>()
+            .Include(pbs => pbs.Product)
+            .Where(pbs => pbs.SowingId == sowingId)
+            .ToListAsync();
+
+        return productsBySowing.Select(pbs => pbs.Product);
+
+    }
+    public async Task<IEnumerable<Sowing>> FindAllAsync()
+    {
+        return await Context.Set<Sowing>().ToListAsync();
     }
 }

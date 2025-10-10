@@ -5,9 +5,9 @@ using Chaquitaclla_API_TSW.Crops.Domain.Repositories;
 using Chaquitaclla_API_TSW.Crops.Domain.Services;
 using Chaquitaclla_API_TSW.Crops.Infrastructure.Persistence.EFC.Repositories;
 using Chaquitaclla_API_TSW.Shared.Domain.Repositories;
-using Chaquitaclla_API_TSW.Shared.Infrastructure.Interfaces.ASP.Configuration;
 using Chaquitaclla_API_TSW.Shared.Infrastructure.Persistence.EFC.Configuration;
 using Chaquitaclla_API_TSW.Shared.Infrastructure.Persistence.EFC.Repositories;
+using Chaquitaclla_API_TSW.Shared.Interfaces.ASP.Configuration;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -72,6 +72,14 @@ builder.Services.AddScoped<IProductQueryService, ProductQueryService>();
 builder.Services.AddScoped<IPestRepository, PestRepository>();
 builder.Services.AddScoped<IPestCommandService, PestCommandService>();
 builder.Services.AddScoped<IPestQueryService, PestQueryService>();
+
+// Repositorios
+builder.Services.AddScoped<IProductsBySowingRepository, ProductsBySowingRepository>();
+builder.Services.AddScoped<ICareRepository, CareRepository>();
+
+// Servicios
+builder.Services.AddScoped<ISowingCommandService, SowingCommandService>();
+builder.Services.AddScoped<ICropCommandService, CropCommandService>();
 
 
 var app = builder.Build();
