@@ -5,5 +5,7 @@ namespace Chaquitaclla_API_TSW.Crops.Domain.Repositories;
 
 public interface IDiseaseRepository : IBaseRepository<Disease>
 {
-    Task<IEnumerable<Disease>> FindByCropIdAsync(int cropId);
+    Task<IEnumerable<Disease>> FindAllAsync();
+    
+    Task<IEnumerable<Disease>> GetDiseasesByCropId(int cropId);
 }

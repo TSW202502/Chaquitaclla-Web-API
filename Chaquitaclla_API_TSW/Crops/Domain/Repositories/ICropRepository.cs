@@ -6,4 +6,6 @@ namespace Chaquitaclla_API_TSW.Crops.Domain.Repositories;
 public interface ICropRepository: IBaseRepository<Crop>
 {
     Task UpdateAsync(Crop crop);
+    Task<IEnumerable<Crop>> FindAllAsync();
+
 }

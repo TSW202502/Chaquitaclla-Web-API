@@ -8,21 +8,21 @@ using Microsoft.AspNetCore.Mvc;
 namespace Chaquitaclla_API_TSW.Crops.Interfaces.REST;
 
 [ApiController]
-[Route("/api/v1/[controller]")]
+[Route("/api/v1/crops-management/crops")]
 [Produces(MediaTypeNames.Application.Json)]
-public class DiseasesController : ControllerBase
+public class CropDiseasesController : ControllerBase
 {
     private readonly IDiseaseCommandService diseaseCommandService;
     private readonly IDiseaseQueryService diseaseQueryService;
 
-    public DiseasesController(IDiseaseCommandService diseaseCommandService,
+    public CropDiseasesController(IDiseaseCommandService diseaseCommandService,
         IDiseaseQueryService diseaseQueryService)
     {
         this.diseaseCommandService = diseaseCommandService;
         this.diseaseQueryService = diseaseQueryService;
     }
 
-    [HttpPost]
+    [HttpPost("diseases")]
     public async Task<ActionResult> CreateDisease([FromBody] CreateDiseaseResource resource)
     {
         var createDiseaseCommand =
@@ -32,12 +32,46 @@ public class DiseasesController : ControllerBase
             DiseaseResourceFromEntityAssembler.ToResourceFromEntity(result));
     }
 
-    [HttpGet("{id}")]
+    [HttpGet("diseases/{id}")]
     public async Task<ActionResult> GetDiseaseById(int id)
     {
         var getDiseaseByIdQuery= new GetDiseaseByIdQuery(id);
         var result = await diseaseQueryService.Handle(getDiseaseByIdQuery);
         var resource = DiseaseResourceFromEntityAssembler.ToResourceFromEntity(result);
         return Ok(resource);
+    }
+    
+    [HttpGet("diseases")]
+    public async Task<ActionResult> GetAllDiseases()
+    {
+        try
+        {
+            var getAllDiseasesQuery = new GetAllDiseasesQuery();
+            var diseases = await diseaseQueryService.Handle(getAllDiseasesQuery);
+            var resources = diseases.Select(DiseaseResourceFromEntityAssembler.ToResourceFromEntity);
+            return Ok(resources);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error retrieving diseases: {ex.Message}");
+            return BadRequest(new { error = ex.Message });
+        }
+    }
+
+    [HttpGet("{cropId}/diseases")]
+    public async Task<ActionResult> GetDiseasesByCropId(int cropId)
+    {
+        try
+        {
+            var getDiseasesByCropIdQuery = new GetDiseaseByCropIdQuery(cropId);
+            var diseases = await diseaseQueryService.Handle(getDiseasesByCropIdQuery);
+            var resources = diseases.Select(DiseaseResourceFromEntityAssembler.ToResourceFromEntity);
+            return Ok(resources);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error retrieving diseases for crop {cropId}: {ex.Message}");
+            return BadRequest(new { error = ex.Message });
+        }
     }
 }

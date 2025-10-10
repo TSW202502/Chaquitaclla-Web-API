@@ -7,7 +7,7 @@ namespace Chaquitaclla_API_TSW.Crops.Interfaces.REST.Transform
     {
         public static PestResource ToResourceFromEntity(Pest entity)
         {
-            return new PestResource(entity.Id, entity.Name, entity.Description);
+            return new PestResource(entity.Id, entity.Name, entity.Description, entity.Solution);
             
         }
     }

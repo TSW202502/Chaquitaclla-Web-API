@@ -5,5 +5,9 @@ namespace Chaquitaclla_API_TSW.Crops.Domain.Repositories;
 
 public interface IPestRepository : IBaseRepository<Pest>
 {
-   Task<IEnumerable<Pest>> FindByCropIdAsync(int cropId);
+   Task<IEnumerable<Pest>> FindAllAsync();
+   
+   Task<IEnumerable<Pest>> GetPestByCropIdQuery(int cropId);
+
+   
 }
