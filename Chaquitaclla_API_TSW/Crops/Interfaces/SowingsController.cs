@@ -1,4 +1,5 @@
 ﻿using System.Net.Mime;
+using Chaquitaclla_API_TSW.Crops.Domain.Model.Commands;
 using Chaquitaclla_API_TSW.Crops.Domain.Model.Queries;
 using Chaquitaclla_API_TSW.Crops.Domain.Services;
 using Chaquitaclla_API_TSW.Crops.Interfaces.REST.Resources;
@@ -64,5 +65,18 @@ public class SowingsController(ISowingCommandService sowingCommandService,
         {
             return Ok();
         }
+    }
+    
+    [HttpDelete("{id:int}")]
+    public async Task<ActionResult> DeleteSowing(int id)
+    {
+        var deleteSowingCommand = new DeleteSowingCommand(id);
+        var result = await sowingCommandService.Handle(deleteSowingCommand);
+        if (!result)
+        {
+            return NotFound();
+        }
+    
+        return Ok("Sowing deleted successful!");
     }
 }
