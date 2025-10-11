@@ -1,5 +1,6 @@
 ﻿using Chaquitaclla_API_TSW.Crops.Domain.Model.Aggregates;
 using Chaquitaclla_API_TSW.Crops.Domain.Model.Commands;
+using Chaquitaclla_API_TSW.Crops.Domain.Model.Entities;
 using Chaquitaclla_API_TSW.Crops.Domain.Repositories;
 using Chaquitaclla_API_TSW.Crops.Domain.Services;
 using Chaquitaclla_API_TSW.Shared.Domain.Repositories;
@@ -8,18 +9,31 @@ namespace Chaquitaclla_API_TSW.Crops.Application.CommandServices;
 
 public class CropCommandService : ICropCommandService
 {
+    private readonly ISowingRepository sowingRepository;
     private readonly ICropRepository cropRepository;
     private readonly IUnitOfWork unitOfWork;
-
-    public CropCommandService(ICropRepository cropRepository, IUnitOfWork unitOfWork)
+    private readonly IDiseaseRepository diseaseRepository;
+    private readonly IPestRepository pestRepository;
+    private readonly ICareRepository careRepository;
+    public CropCommandService(ICropRepository cropRepository, ISowingRepository sowingRepository,
+        IUnitOfWork unitOfWork, IDiseaseRepository diseaseRepository, IPestRepository pestRepository, ICareRepository careRepository)
     {
         this.cropRepository = cropRepository;
+        this.sowingRepository = sowingRepository;
         this.unitOfWork = unitOfWork;
+        this.diseaseRepository = diseaseRepository;
+        this.pestRepository = pestRepository;
+        this.careRepository = careRepository;
     }
 
     public async Task<Crop> Handle(CreateCropCommand command)
     {
-        var crop = new Crop(command);
+        var diseases = command.Diseases.Select<int, Disease>(id => diseaseRepository.FindByIdAsync(id).Result ?? throw new Exception("Disease not found")).ToList();
+        var pests = command.Pests.Select<int, Pest>(id => pestRepository.FindByIdAsync(id).Result ?? throw new Exception("Pest not found")).ToList();
+        var cares = command.Cares.Select<int, Care>(id => careRepository.FindByIdAsync(id).Result ?? throw new Exception("Care not found")).ToList();
+
+        var crop = new Crop(command.Name, command.Description, command.ImageUrl, diseases, pests, cares);
+
         try
         {
             await cropRepository.AddAsync(crop);
@@ -40,7 +54,7 @@ public class CropCommandService : ICropCommandService
             throw new Exception("Crop not found");
         }
 
-        crop.Update(command.Name, command.Description); // Assuming Update method exists in Crop class
+        crop.Update(command.Name, command.Description);
 
         try
         {
@@ -52,5 +66,68 @@ public class CropCommandService : ICropCommandService
         {
             throw new Exception("An error occurred while trying to update the Crop", e);
         }
+    }
+
+    public async Task<Sowing> CreateSowingFromCrop(int id)
+    {
+        var crop = await cropRepository.FindByIdAsync(id);
+        if (crop == null)
+        {
+            throw new Exception("Crop not found");
+        }
+
+        var sowing = new Sowing
+        {
+            CropId = crop.Id
+            // Inicializa otras propiedades necesarias aquí
+        };
+
+        await sowingRepository.AddAsync(sowing);
+        await unitOfWork.CompleteAsync();
+        return sowing;
+    }
+
+    public async Task<Crop> DeleteCrop(int id)
+    {
+        var crop = await cropRepository.FindByIdAsync(id);
+        if (crop == null)
+        {
+            throw new Exception("Crop not found");
+        }
+
+        cropRepository.Remove(crop);
+        await unitOfWork.CompleteAsync();
+
+        return crop;
+    }
+
+    public async Task<Sowing> HandleCreateSowing(CreateSowingCommand createSowingCommand)
+    {
+        if (createSowingCommand == null)
+        {
+            throw new ArgumentNullException(nameof(createSowingCommand), "The provided sowing command is null.");
+        }
+
+        var sowing = new Sowing(createSowingCommand);
+
+        try
+        {
+            await sowingRepository.AddAsync(sowing);
+        }
+        catch (Exception e)
+        {
+            throw new Exception("An error occurred while trying to add the new Sowing to the repository.", e);
+        }
+
+        try
+        {
+            await unitOfWork.CompleteAsync();
+        }
+        catch (Exception e)
+        {
+            throw new Exception("An error occurred while trying to save changes to the database.", e);
+        }
+
+        return sowing;
     }
 }

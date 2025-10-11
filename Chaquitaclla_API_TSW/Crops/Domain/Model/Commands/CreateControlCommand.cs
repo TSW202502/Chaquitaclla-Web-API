@@ -2,4 +2,4 @@
 
 namespace Chaquitaclla_API_TSW.Crops.Domain.Model.Commands;
 
-public record CreateControlCommand(ESowingCondition Condition, ESowingSoilMoisture SoilMoisture, ESowingStemCondition StemCondition, int SowingId);
+public record CreateControlCommand(int SowingId, ESowingCondition SowingCondition, ESowingStemCondition StemCondition,  ESowingSoilMoisture SoilMoisture);

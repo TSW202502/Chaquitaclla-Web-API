@@ -9,6 +9,7 @@ public static class DiseaseResourceFromEntityAssembler
     {
         return new DiseaseResource(entity.Id,
             entity.Name,
-            entity.Description);
+            entity.Description,
+            entity.Solution);
     }
 }
