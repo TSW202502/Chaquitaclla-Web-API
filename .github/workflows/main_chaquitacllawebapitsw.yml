@@ -1,3 +1,6 @@
+# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
+# More GitHub Actions for Azure: https://github.com/Azure/actions
+
 name: Build and deploy ASP.Net Core app to Azure Web App - chaquitacllawebapitsw
 
 on:
@@ -10,7 +13,7 @@ jobs:
   build:
     runs-on: windows-latest
     permissions:
-      contents: read
+      contents: read #This is required for actions/checkout
 
     steps:
       - uses: actions/checkout@v4
@@ -39,25 +42,27 @@ jobs:
     runs-on: windows-latest
     needs: build
     permissions:
-      id-token: write
-      contents: read
+      id-token: write #This is required for requesting the JWT
+      contents: read #This is required for actions/checkout
 
     steps:
       - name: Download artifact from build job
         uses: actions/download-artifact@v4
         with:
-          name: dotnet-app
-          path: ./downloaded_artifact
-
+          name: .net-app
+      
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZURE_CLIENT_ID }}
-          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
-          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_69810F6481294FB39A15D88A95769062 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_AC6BD07404424EC7AA31108357DA6119 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_7161CC064C3848608BAA5E9C59D4294A }}
 
       - name: Deploy to Azure Web App
+        id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
           app-name: 'chaquitacllawebapitsw'
-          package: ./downloaded_artifact
+          slot-name: 'Production'
+          package: .
+          
