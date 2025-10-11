@@ -31,12 +31,12 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 {
     if (connectionString != null)
         if (builder.Environment.IsDevelopment())
-            options.UseMySQL(connectionString)
+            options.UseSqlServer(connectionString)
                 .LogTo(Console.WriteLine, LogLevel.Information)
                 .EnableSensitiveDataLogging()
                 .EnableDetailedErrors();
         else if (builder.Environment.IsProduction())
-            options.UseMySQL(connectionString)
+            options.UseSqlServer(connectionString)
                 .LogTo(Console.WriteLine, LogLevel.Information)
                 .EnableSensitiveDataLogging()
                 .EnableDetailedErrors();
@@ -72,6 +72,11 @@ builder.Services.AddScoped<IProductQueryService, ProductQueryService>();
 builder.Services.AddScoped<IPestRepository, PestRepository>();
 builder.Services.AddScoped<IPestCommandService, PestCommandService>();
 builder.Services.AddScoped<IPestQueryService, PestQueryService>();
+
+// Control repository and services
+builder.Services.AddScoped<IControlRepository, ControlRepository>();
+builder.Services.AddScoped<IControlCommandService, ControlCommandService>();
+builder.Services.AddScoped<IControlQueryService, ControlQueryService>();
 
 // Repositorios
 builder.Services.AddScoped<IProductsBySowingRepository, ProductsBySowingRepository>();
