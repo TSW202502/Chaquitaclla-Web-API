@@ -1,3 +1,3 @@
-namespace ChaquitacllaError404.API.IAM.Domain.Model.Queries;
+namespace Chaquitaclla_API_TSW.IAM.Domain.Model.Queries;
 
 public record GetUserByUsernameQuery(string Username);

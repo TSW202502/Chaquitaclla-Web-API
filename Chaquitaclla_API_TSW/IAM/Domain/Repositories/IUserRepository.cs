@@ -1,7 +1,7 @@
-using ChaquitacllaError404.API.IAM.Domain.Model.Aggregates;
-using ChaquitacllaError404.API.Shared.Domain.Repositories;
+using Chaquitaclla_API_TSW.IAM.Domain.Model.Aggregates;
+using Chaquitaclla_API_TSW.Shared.Domain.Repositories;
 
-namespace ChaquitacllaError404.API.IAM.Domain.Repositories;
+namespace Chaquitaclla_API_TSW.IAM.Domain.Repositories;
 
 public interface IUserRepository : IBaseRepository<User>
 {

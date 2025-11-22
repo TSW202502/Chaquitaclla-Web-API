@@ -1,8 +1,11 @@
+using Chaquitaclla_API_TSW.Crops.Domain.Model.Aggregates;
 using Chaquitaclla_API_TSW.Crops.Domain.Model.Commands;
 using Chaquitaclla_API_TSW.Crops.Domain.Model.Entities;
 using Chaquitaclla_API_TSW.Crops.Domain.Repositories;
 using Chaquitaclla_API_TSW.Crops.Domain.Services;
 using Chaquitaclla_API_TSW.Shared.Domain.Repositories;
+using System;
+using System.Threading.Tasks;
 
 namespace Chaquitaclla_API_TSW.Crops.Application.CommandServices
 {

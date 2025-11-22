@@ -1,7 +1,7 @@
-using ChaquitacllaError404.API.IAM.Domain.Model.Aggregates;
-using ChaquitacllaError404.API.IAM.Domain.Model.Queries;
+using Chaquitaclla_API_TSW.IAM.Domain.Model.Aggregates;
+using Chaquitaclla_API_TSW.IAM.Domain.Model.Queries;
 
-namespace ChaquitacllaError404.API.IAM.Domain.Services;
+namespace Chaquitaclla_API_TSW.IAM.Domain.Services;
 
 public interface IUserQueryService
 {

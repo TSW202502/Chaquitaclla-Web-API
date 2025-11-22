@@ -1,4 +1,5 @@
-ï»¿using Chaquitaclla_API_TSW.Crops.Domain.Model.Commands;
+using System.Net.Mime;
+using Chaquitaclla_API_TSW.Crops.Domain.Model.Commands;
 using Chaquitaclla_API_TSW.Crops.Domain.Model.Queries;
 using Chaquitaclla_API_TSW.Crops.Domain.Services;
 using Chaquitaclla_API_TSW.Crops.Interfaces.REST.Resources;
@@ -37,7 +38,7 @@ namespace Chaquitaclla_API_TSW.Crops.Interfaces.REST
             var getControlByIdQuery = new GetControlByIdQuery(controlId);
             var controlOptional = await controlQueryService.Handle(getControlByIdQuery);
             if (controlOptional == null)
-                return BadRequest("No se encontrÃ³ un Control con el ID proporcionado: " + controlId);
+                return BadRequest("No se encontró un Control con el ID proporcionado: " + controlId);
 
             var controlResourceResponse = ControlResourceFromEntityAssembler.ToResourceFromEntity(controlOptional);
             return Ok(controlResourceResponse);
@@ -49,7 +50,7 @@ namespace Chaquitaclla_API_TSW.Crops.Interfaces.REST
             var getSowingByIdQuery = new GetSowingByIdQuery(sowingId);
             var sowingOptional = await sowingQueryService.Handle(getSowingByIdQuery);
             if (sowingOptional == null)
-                return BadRequest("No se encontrÃ³ un Sowing con el ID proporcionado: " + sowingId);
+                return BadRequest("No se encontró un Sowing con el ID proporcionado: " + sowingId);
 
             var deleteControlCommand = new DeleteControlCommand(sowingId, controlId);
             await controlCommandService.Handle(deleteControlCommand);
@@ -87,7 +88,7 @@ namespace Chaquitaclla_API_TSW.Crops.Interfaces.REST
             var getSowingByIdQuery = new GetSowingByIdQuery(sowingId);
             var sowingOptional = await sowingQueryService.Handle(getSowingByIdQuery);
             if (sowingOptional == null)
-                return BadRequest("No se encontrÃ³ un Sowing con el ID proporcionado: " + sowingId);
+                return BadRequest("No se encontró un Sowing con el ID proporcionado: " + sowingId);
 
             var createControlCommand = CreateControlSourceCommandFromResourceAssembler.ToCommandFromResource(sowingId, resource);
             var control = await controlCommandService.Handle(createControlCommand);

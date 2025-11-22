@@ -1,4 +1,4 @@
-﻿using Humanizer;
+using Humanizer;
 
 namespace Chaquitaclla_API_TSW.Shared.Infrastructure.Persistence.EFC.Configuration.Extensions;
 /**

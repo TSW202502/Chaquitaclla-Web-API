@@ -1,4 +1,4 @@
-﻿using System.Text.RegularExpressions;
+using System.Text.RegularExpressions;
 
 namespace Chaquitaclla_API_TSW.Shared.Interfaces.ASP.Configuration.Extensions;
 

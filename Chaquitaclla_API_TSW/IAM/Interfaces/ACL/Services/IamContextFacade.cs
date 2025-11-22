@@ -1,8 +1,8 @@
-using ChaquitacllaError404.API.IAM.Domain.Model.Commands;
-using ChaquitacllaError404.API.IAM.Domain.Model.Queries;
-using ChaquitacllaError404.API.IAM.Domain.Services;
+using Chaquitaclla_API_TSW.IAM.Domain.Model.Commands;
+using Chaquitaclla_API_TSW.IAM.Domain.Model.Queries;
+using Chaquitaclla_API_TSW.IAM.Domain.Services;
 
-namespace ChaquitacllaError404.API.IAM.Interfaces.ACL.Services;
+namespace Chaquitaclla_API_TSW.IAM.Interfaces.ACL.Services;
 
 public class IamContextFacade(
     IUserQueryService userQueryService, 

@@ -1,6 +1,13 @@
-using Chaquitaclla_API_TSW.Crops.Domain.Model.Aggregates;
-using Chaquitaclla_API_TSW.Crops.Domain.Model.Entities;
+
 using Chaquitaclla_API_TSW.Shared.Infrastructure.Persistence.EFC.Configuration.Extensions;
+
+using Chaquitaclla_API_TSW.Crops.Domain.Model.Aggregates;
+using Chaquitaclla_API_TSW.Forum.Domain.Model.Aggregates;
+using Chaquitaclla_API_TSW.Forum.Domain.Model.Entities;
+using Chaquitaclla_API_TSW.Crops.Domain.Model.Entities;
+using Chaquitaclla_API_TSW.IAM.Domain.Model.Aggregates;
+using Chaquitaclla_API_TSW.Profiles.Domain.Model.Aggregates;
+using Chaquitaclla_API_TSW.Profiles.Domain.Model.Entities;
 using EntityFrameworkCore.CreatedUpdatedDate.Extensions;
 using Microsoft.EntityFrameworkCore;
 
@@ -19,6 +26,33 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
+        
+  
+    //Forum
+        builder.Entity<Category>().HasKey(c => c.Id);
+        builder.Entity<Category>().Property(c => c.Id).IsRequired().ValueGeneratedOnAdd();
+        builder.Entity<Category>().Property(c => c.Name).IsRequired();
+    
+        builder.Entity<Question>().HasKey(q => q.Id);
+        builder.Entity<Question>().Property(q => q.Id).IsRequired().ValueGeneratedOnAdd();
+        builder.Entity<Question>().Property(q => q.QuestionText).IsRequired();
+        builder.Entity<Question>().Property(q => q.Date).IsRequired();
+        
+        builder.Entity<Category>()
+            .HasMany(c => c.Questions)
+            .WithOne(q => q.Category)
+            .HasForeignKey(q => q.CategoryId);
+            
+        builder.Entity<Answer>().HasKey(a => a.Id);
+        builder.Entity<Answer>().Property(a => a.Id).IsRequired().ValueGeneratedOnAdd();
+        builder.Entity<Answer>().Property(a => a.AnswerText).IsRequired();
+
+
+
+        builder.Entity<Question>()
+            .HasMany(q => q.Answers)
+            .WithOne(a => a.Question)
+            .HasForeignKey(a => a.QuestionId);
 
         // Sowing Aggregate
         builder.Entity<Sowing>().HasKey(f=>f.Id);
@@ -105,7 +139,41 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
             .WithMany(s => s.ProductsBySowing)
             .HasForeignKey(p => p.SowingId);
         
-        //Relationships of many to many about Crops and Diseases
+        
+        
+        // IAM Context
+        builder.Entity<User>().HasKey(u => u.Id);
+        builder.Entity<User>().Property(u => u.Id).IsRequired().ValueGeneratedOnAdd();
+        builder.Entity<User>().Property(u => u.Username).IsRequired();
+        builder.Entity<User>().Property(u => u.PasswordHash).IsRequired();
+        
+        // Profiles Context
+        builder.Entity<Profile>().HasKey(p => p.Id);
+        builder.Entity<Profile>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
+        builder.Entity<Profile>().OwnsOne(p => p.Name,
+            n =>
+            {
+                n.WithOwner().HasForeignKey("Id");
+                n.Property(p => p.FirstName).HasColumnName("FirstName");
+                n.Property(p => p.LastName).HasColumnName("LastName");
+            });
+        builder.Entity<Profile>().Property(p => p.CountryId).IsRequired();
+        builder.Entity<Profile>().Property(p => p.CityId);
+        builder.Entity<Profile>().OwnsOne(p => p.Email,
+            e =>
+            {
+                e.WithOwner().HasForeignKey("Id");
+                e.Property(a => a.Address).HasColumnName("EmailAddress");
+            });
+        builder.Entity<Profile>().Property(p => p.SubscriptionId).IsRequired();
+        builder.Entity<Subscription>().Property(p=>p.Description).IsRequired();
+        builder.Entity<Subscription>().Property(p=>p.Price).IsRequired();
+        builder.Entity<Subscription>().Property(p=>p.Range).IsRequired();
+        
+        
+        // RELATIONSHIPS 
+        
+        //Many to Many relationship between Pest and Crop
         builder.Entity<Crop>()
             .HasMany(c => c.Pests)
             .WithMany(p => p.Crops)

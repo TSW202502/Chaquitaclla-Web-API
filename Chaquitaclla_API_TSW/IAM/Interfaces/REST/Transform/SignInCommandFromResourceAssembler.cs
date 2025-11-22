@@ -1,7 +1,7 @@
-using ChaquitacllaError404.API.IAM.Domain.Model.Commands;
-using ChaquitacllaError404.API.IAM.Interfaces.REST.Resources;
+using Chaquitaclla_API_TSW.IAM.Domain.Model.Commands;
+using Chaquitaclla_API_TSW.IAM.Interfaces.REST.Resources;
 
-namespace ChaquitacllaError404.API.IAM.Interfaces.REST.Transform;
+namespace Chaquitaclla_API_TSW.IAM.Interfaces.REST.Transform;
 
 public static class SignInCommandFromResourceAssembler
 {

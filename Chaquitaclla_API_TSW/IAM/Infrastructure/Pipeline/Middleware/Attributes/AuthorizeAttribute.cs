@@ -1,8 +1,8 @@
-using ChaquitacllaError404.API.IAM.Domain.Model.Aggregates;
+using Chaquitaclla_API_TSW.IAM.Domain.Model.Aggregates;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 
-namespace ChaquitacllaError404.API.IAM.Infrastructure.Pipeline.Middleware.Attributes;
+namespace Chaquitaclla_API_TSW.IAM.Infrastructure.Pipeline.Middleware.Attributes;
 
 [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method)]
 public class AuthorizeAttribute: Attribute, IAuthorizationFilter

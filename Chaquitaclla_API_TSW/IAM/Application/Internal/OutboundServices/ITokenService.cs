@@ -1,6 +1,6 @@
-using ChaquitacllaError404.API.IAM.Domain.Model.Aggregates;
+using Chaquitaclla_API_TSW.IAM.Domain.Model.Aggregates;
 
-namespace ChaquitacllaError404.API.IAM.Application.Internal.OutboundServices;
+namespace Chaquitaclla_API_TSW.IAM.Application.Internal.OutboundServices;
 
 public interface ITokenService
 {

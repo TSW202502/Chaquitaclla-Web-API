@@ -1,4 +1,4 @@
-using ChaquitacllaError404.API.IAM.Application.Internal.OutboundServices;
+using Chaquitaclla_API_TSW.IAM.Application.Internal.OutboundServices;
 using BCryptNet = BCrypt.Net.BCrypt;
 
 /**
@@ -6,7 +6,7 @@ using BCryptNet = BCrypt.Net.BCrypt;
  *    This class is responsible for hashing and validating passwords.
  * </summary>
  */
-namespace ChaquitacllaError404.API.IAM.Infrastructure.Hashing.BCrypt.Services;
+namespace Chaquitaclla_API_TSW.IAM.Infrastructure.Hashing.BCrypt.Services;
 
 public class HashingService : IHashingService
 {

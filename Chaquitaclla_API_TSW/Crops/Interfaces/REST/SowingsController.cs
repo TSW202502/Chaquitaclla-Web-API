@@ -1,10 +1,16 @@
-﻿using System.Net.Mime;
+using System.Net.Mime;
 using Chaquitaclla_API_TSW.Crops.Domain.Model.Commands;
+using Chaquitaclla_API_TSW.Crops.Domain.Model.Entities;
+using Chaquitaclla_API_TSW.Crops.Domain.Services;
 using Chaquitaclla_API_TSW.Crops.Domain.Model.Queries;
 using Chaquitaclla_API_TSW.Crops.Domain.Services;
 using Chaquitaclla_API_TSW.Crops.Interfaces.REST.Resources;
 using Chaquitaclla_API_TSW.Crops.Interfaces.REST.Transform;
+using Chaquitaclla_API_TSW.Shared.Infrastructure.Persistence.EFC.Configuration;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace Chaquitaclla_API_TSW.Crops.Interfaces.REST;
 

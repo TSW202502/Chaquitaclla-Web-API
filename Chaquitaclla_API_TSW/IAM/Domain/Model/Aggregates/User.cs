@@ -1,7 +1,7 @@
 using System.Text.Json.Serialization;
 using Mysqlx.Datatypes;
 
-namespace ChaquitacllaError404.API.IAM.Domain.Model.Aggregates;
+namespace Chaquitaclla_API_TSW.IAM.Domain.Model.Aggregates;
 
 public class User(string username, string passwordHash)
 {

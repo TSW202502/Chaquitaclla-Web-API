@@ -1,11 +1,11 @@
-using ChaquitacllaError404.API.IAM.Application.Internal.OutboundServices;
-using ChaquitacllaError404.API.IAM.Domain.Model.Aggregates;
-using ChaquitacllaError404.API.IAM.Domain.Model.Commands;
-using ChaquitacllaError404.API.IAM.Domain.Repositories;
-using ChaquitacllaError404.API.IAM.Domain.Services;
-using ChaquitacllaError404.API.Shared.Domain.Repositories;
+using Chaquitaclla_API_TSW.IAM.Application.Internal.OutboundServices;
+using Chaquitaclla_API_TSW.IAM.Domain.Model.Aggregates;
+using Chaquitaclla_API_TSW.IAM.Domain.Model.Commands;
+using Chaquitaclla_API_TSW.IAM.Domain.Repositories;
+using Chaquitaclla_API_TSW.IAM.Domain.Services;
+using Chaquitaclla_API_TSW.Shared.Domain.Repositories;
 
-namespace ChaquitacllaError404.API.IAM.Application.Internal.CommandServices;
+namespace Chaquitaclla_API_TSW.IAM.Application.Internal.CommandServices;
 
 public class UserCommandService(
     IUserRepository userRepository,

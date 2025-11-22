@@ -1,7 +1,7 @@
-using ChaquitacllaError404.API.IAM.Domain.Model.Aggregates;
-using ChaquitacllaError404.API.IAM.Domain.Model.Commands;
+using Chaquitaclla_API_TSW.IAM.Domain.Model.Aggregates;
+using Chaquitaclla_API_TSW.IAM.Domain.Model.Commands;
 
-namespace ChaquitacllaError404.API.IAM.Domain.Services;
+namespace Chaquitaclla_API_TSW.IAM.Domain.Services;
 
 public interface IUserCommandService
 {

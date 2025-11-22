@@ -1,6 +1,7 @@
-﻿using Chaquitaclla_API_TSW.Crops.Domain.Model.Aggregates;
+using Chaquitaclla_API_TSW.Crops.Domain.Model.Aggregates;
 using Chaquitaclla_API_TSW.Crops.Domain.Model.Commands;
 using Chaquitaclla_API_TSW.Crops.Domain.Model.ValueObjects;
+using System.Collections.Generic;
 
 namespace Chaquitaclla_API_TSW.Crops.Domain.Model.Entities;
 
