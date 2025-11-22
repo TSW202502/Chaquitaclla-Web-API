@@ -1,9 +1,9 @@
-using ChaquitacllaError404.API.IAM.Application.Internal.OutboundServices;
-using ChaquitacllaError404.API.IAM.Domain.Model.Queries;
-using ChaquitacllaError404.API.IAM.Domain.Services;
-using ChaquitacllaError404.API.IAM.Infrastructure.Pipeline.Middleware.Attributes;
+using Chaquitaclla_API_TSW.IAM.Application.Internal.OutboundServices;
+using Chaquitaclla_API_TSW.IAM.Domain.Model.Queries;
+using Chaquitaclla_API_TSW.IAM.Domain.Services;
+using Chaquitaclla_API_TSW.IAM.Infrastructure.Pipeline.Middleware.Attributes;
 
-namespace ChaquitacllaError404.API.IAM.Infrastructure.Pipeline.Middleware.Components;
+namespace Chaquitaclla_API_TSW.IAM.Infrastructure.Pipeline.Middleware.Components;
 
 public class RequestAuthorizationMiddleware(RequestDelegate next)
 {

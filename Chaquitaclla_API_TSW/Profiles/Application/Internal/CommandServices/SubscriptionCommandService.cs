@@ -1,10 +1,10 @@
-﻿using ChaquitacllaError404.API.Profiles.Domain.Model.Commands;
-using ChaquitacllaError404.API.Profiles.Domain.Model.Entities;
-using ChaquitacllaError404.API.Profiles.Domain.Repositories;
-using ChaquitacllaError404.API.Profiles.Domain.Services;
-using ChaquitacllaError404.API.Shared.Domain.Repositories;
+using Chaquitaclla_API_TSW.Profiles.Domain.Model.Commands;
+using Chaquitaclla_API_TSW.Profiles.Domain.Model.Entities;
+using Chaquitaclla_API_TSW.Profiles.Domain.Repositories;
+using Chaquitaclla_API_TSW.Profiles.Domain.Services;
+using Chaquitaclla_API_TSW.Shared.Domain.Repositories;
 
-namespace ChaquitacllaError404.API.Profiles.Application.Internal.CommandServices;
+namespace Chaquitaclla_API_TSW.Profiles.Application.Internal.CommandServices;
 
 public class SubscriptionCommandService(ISubscriptionRepository subscriptionRepository, IUnitOfWork unitOfWork) : ISubscriptionCommandService
 {

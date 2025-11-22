@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace Chaquitaclla_API_TSW.Shared.Interfaces.ASP.Configuration.Extensions;
 

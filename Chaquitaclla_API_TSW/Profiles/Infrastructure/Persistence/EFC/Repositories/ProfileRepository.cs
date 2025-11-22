@@ -1,11 +1,11 @@
-﻿using ChaquitacllaError404.API.Profiles.Domain.Model.Aggregates;
-using ChaquitacllaError404.API.Profiles.Domain.Model.ValueObjects;
-using ChaquitacllaError404.API.Profiles.Domain.Repositories;
-using ChaquitacllaError404.API.Shared.Infrastructure.Persistence.EFC.Configuration;
-using ChaquitacllaError404.API.Shared.Infrastructure.Persistence.EFC.Repositories;
+using Chaquitaclla_API_TSW.Profiles.Domain.Model.Aggregates;
+using Chaquitaclla_API_TSW.Profiles.Domain.Model.ValueObjects;
+using Chaquitaclla_API_TSW.Profiles.Domain.Repositories;
+using Chaquitaclla_API_TSW.Shared.Infrastructure.Persistence.EFC.Configuration;
+using Chaquitaclla_API_TSW.Shared.Infrastructure.Persistence.EFC.Repositories;
 using Microsoft.EntityFrameworkCore;
 
-namespace ChaquitacllaError404.API.Profiles.Infrastructure.Persistence.EFC.Repositories;
+namespace Chaquitaclla_API_TSW.Profiles.Infrastructure.Persistence.EFC.Repositories;
 
 public class ProfileRepository(AppDbContext context) : BaseRepository<Profile>(context), IProfileRepository
 {

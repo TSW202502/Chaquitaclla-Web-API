@@ -1,6 +1,6 @@
-using ChaquitacllaError404.API.IAM.Infrastructure.Pipeline.Middleware.Components;
+using Chaquitaclla_API_TSW.IAM.Infrastructure.Pipeline.Middleware.Components;
 
-namespace ChaquitacllaError404.API.IAM.Infrastructure.Pipeline.Middleware.Extensions;
+namespace Chaquitaclla_API_TSW.IAM.Infrastructure.Pipeline.Middleware.Extensions;
 
 public static class ApplicationBuilderExtensions
 {

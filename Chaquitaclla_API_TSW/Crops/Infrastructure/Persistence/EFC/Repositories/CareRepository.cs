@@ -1,4 +1,4 @@
-﻿using Chaquitaclla_API_TSW.Crops.Domain.Model.Aggregates;
+using Chaquitaclla_API_TSW.Crops.Domain.Model.Aggregates;
 using Chaquitaclla_API_TSW.Crops.Domain.Model.Entities;
 using Chaquitaclla_API_TSW.Crops.Domain.Repositories;
 using Chaquitaclla_API_TSW.Shared.Infrastructure.Persistence.EFC.Configuration;

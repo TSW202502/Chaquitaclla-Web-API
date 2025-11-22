@@ -1,4 +1,4 @@
-namespace ChaquitacllaError404.API.IAM.Interfaces.ACL;
+namespace Chaquitaclla_API_TSW.IAM.Interfaces.ACL;
 
 public interface IIamContextFacade
 {

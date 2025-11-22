@@ -1,4 +1,4 @@
-﻿using Chaquitaclla_API_TSW.Crops.Domain.Model.Commands;
+using Chaquitaclla_API_TSW.Crops.Domain.Model.Commands;
 using Chaquitaclla_API_TSW.Crops.Domain.Model.Entities;
 using Chaquitaclla_API_TSW.Crops.Domain.Model.ValueObjects;
 

@@ -1,7 +1,7 @@
-﻿using ChaquitacllaError404.API.Profiles.Domain.Model.Commands;
-using ChaquitacllaError404.API.Profiles.Domain.Model.Entities;
+using Chaquitaclla_API_TSW.Profiles.Domain.Model.Commands;
+using Chaquitaclla_API_TSW.Profiles.Domain.Model.Entities;
 
-namespace ChaquitacllaError404.API.Profiles.Domain.Services;
+namespace Chaquitaclla_API_TSW.Profiles.Domain.Services;
 
 public interface ISubscriptionCommandService
 {

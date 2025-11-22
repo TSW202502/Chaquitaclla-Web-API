@@ -1,7 +1,7 @@
-﻿using ChaquitacllaError404.API.Profiles.Domain.Model.Commands;
-using ChaquitacllaError404.API.Profiles.Interfaces.REST.Resources;
+using Chaquitaclla_API_TSW.Profiles.Domain.Model.Commands;
+using Chaquitaclla_API_TSW.Profiles.Interfaces.REST.Resources;
 
-namespace ChaquitacllaError404.API.Profiles.Interfaces.REST.Transform;
+namespace Chaquitaclla_API_TSW.Profiles.Interfaces.REST.Transform;
 
 public static class CreateProfileCommandFromResourceAssembler
 {

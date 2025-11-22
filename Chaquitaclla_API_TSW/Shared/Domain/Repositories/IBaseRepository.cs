@@ -1,4 +1,4 @@
-﻿namespace Chaquitaclla_API_TSW.Shared.Domain.Repositories;
+namespace Chaquitaclla_API_TSW.Shared.Domain.Repositories;
 
 public interface IBaseRepository<TEntity>
 {

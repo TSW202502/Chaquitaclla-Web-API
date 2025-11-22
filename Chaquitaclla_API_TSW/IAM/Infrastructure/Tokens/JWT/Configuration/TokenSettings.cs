@@ -1,4 +1,4 @@
-namespace ChaquitacllaError404.API.IAM.Infrastructure.Tokens.JWT.Configuration;
+namespace Chaquitaclla_API_TSW.IAM.Infrastructure.Tokens.JWT.Configuration;
 
 /**
  * <summary>

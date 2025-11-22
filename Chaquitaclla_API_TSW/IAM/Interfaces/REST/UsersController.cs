@@ -1,11 +1,11 @@
 using System.Net.Mime;
-using ChaquitacllaError404.API.IAM.Domain.Model.Queries;
-using ChaquitacllaError404.API.IAM.Domain.Services;
-using ChaquitacllaError404.API.IAM.Infrastructure.Pipeline.Middleware.Attributes;
-using ChaquitacllaError404.API.IAM.Interfaces.REST.Transform;
+using Chaquitaclla_API_TSW.IAM.Domain.Model.Queries;
+using Chaquitaclla_API_TSW.IAM.Domain.Services;
+using Chaquitaclla_API_TSW.IAM.Infrastructure.Pipeline.Middleware.Attributes;
+using Chaquitaclla_API_TSW.IAM.Interfaces.REST.Transform;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ChaquitacllaError404.API.IAM.Interfaces.REST;
+namespace Chaquitaclla_API_TSW.IAM.Interfaces.REST;
 
 [Authorize]
 [ApiController]

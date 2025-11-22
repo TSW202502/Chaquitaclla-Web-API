@@ -1,5 +1,5 @@
-﻿using ChaquitacllaError404.API.Profiles.Domain.Model.ValueObjects;
+using Chaquitaclla_API_TSW.Profiles.Domain.Model.ValueObjects;
 
-namespace ChaquitacllaError404.API.Profiles.Interfaces.REST.Resources;
+namespace Chaquitaclla_API_TSW.Profiles.Interfaces.REST.Resources;
 
 public record CreateSubscriptionResource(string Description, decimal Price, int Range);

@@ -1,34 +1,34 @@
-using ChaquitacllaError404.API.Crops.Application.CommandServices;
-using  ChaquitacllaError404.API.Crops.Application.QueryServices;
-using  ChaquitacllaError404.API.Crops.Domain.Repositories;
-using  ChaquitacllaError404.API.Crops.Domain.Services;
-using  ChaquitacllaError404.API.Crops.Infrastructure.Persistence.EFC.Repositories;
-using ChaquitacllaError404.API.Forum.Application.CommandServices;
-using ChaquitacllaError404.API.Forum.Application.QueryService;
-using ChaquitacllaError404.API.Forum.Domain.Repositories;
-using ChaquitacllaError404.API.Forum.Domain.Services;
-using ChaquitacllaError404.API.Forum.Infrastructure.Persistence.EFC.Repositories;
-using ChaquitacllaError404.API.IAM.Application.Internal.CommandServices;
-using ChaquitacllaError404.API.IAM.Application.Internal.OutboundServices;
-using ChaquitacllaError404.API.IAM.Application.Internal.QueryServices;
-using ChaquitacllaError404.API.IAM.Domain.Repositories;
-using ChaquitacllaError404.API.IAM.Domain.Services;
-using ChaquitacllaError404.API.IAM.Infrastructure.Hashing.BCrypt.Services;
-using ChaquitacllaError404.API.IAM.Infrastructure.Persistence.EFC.Repositories;
-using ChaquitacllaError404.API.IAM.Infrastructure.Pipeline.Middleware.Extensions;
-using ChaquitacllaError404.API.IAM.Infrastructure.Tokens.JWT.Configuration;
-using ChaquitacllaError404.API.IAM.Infrastructure.Tokens.JWT.Services;
-using ChaquitacllaError404.API.IAM.Interfaces.ACL;
-using ChaquitacllaError404.API.IAM.Interfaces.ACL.Services;
-using ChaquitacllaError404.API.Profiles.Application.Internal.CommandServices;
-using ChaquitacllaError404.API.Profiles.Application.Internal.QueryServices;
-using ChaquitacllaError404.API.Profiles.Domain.Repositories;
-using ChaquitacllaError404.API.Profiles.Domain.Services;
-using ChaquitacllaError404.API.Profiles.Infrastructure.Persistence.EFC.Repositories;
-using ChaquitacllaError404.API.Shared.Domain.Repositories;
-using  ChaquitacllaError404.API.Shared.Interfaces.ASP.Configuration;
-using  ChaquitacllaError404.API.Shared.Infrastructure.Persistence.EFC.Configuration;
-using  ChaquitacllaError404.API.Shared.Infrastructure.Persistence.EFC.Repositories;
+using Chaquitaclla_API_TSW.Crops.Application.CommandServices;
+using  Chaquitaclla_API_TSW.Crops.Application.QueryServices;
+using  Chaquitaclla_API_TSW.Crops.Domain.Repositories;
+using  Chaquitaclla_API_TSW.Crops.Domain.Services;
+using  Chaquitaclla_API_TSW.Crops.Infrastructure.Persistence.EFC.Repositories;
+using Chaquitaclla_API_TSW.Forum.Application.CommandServices;
+using Chaquitaclla_API_TSW.Forum.Application.QueryService;
+using Chaquitaclla_API_TSW.Forum.Domain.Repositories;
+using Chaquitaclla_API_TSW.Forum.Domain.Services;
+using Chaquitaclla_API_TSW.Forum.Infrastructure.Persistence.EFC.Repositories;
+using Chaquitaclla_API_TSW.IAM.Application.Internal.CommandServices;
+using Chaquitaclla_API_TSW.IAM.Application.Internal.OutboundServices;
+using Chaquitaclla_API_TSW.IAM.Application.Internal.QueryServices;
+using Chaquitaclla_API_TSW.IAM.Domain.Repositories;
+using Chaquitaclla_API_TSW.IAM.Domain.Services;
+using Chaquitaclla_API_TSW.IAM.Infrastructure.Hashing.BCrypt.Services;
+using Chaquitaclla_API_TSW.IAM.Infrastructure.Persistence.EFC.Repositories;
+using Chaquitaclla_API_TSW.IAM.Infrastructure.Pipeline.Middleware.Extensions;
+using Chaquitaclla_API_TSW.IAM.Infrastructure.Tokens.JWT.Configuration;
+using Chaquitaclla_API_TSW.IAM.Infrastructure.Tokens.JWT.Services;
+using Chaquitaclla_API_TSW.IAM.Interfaces.ACL;
+using Chaquitaclla_API_TSW.IAM.Interfaces.ACL.Services;
+using Chaquitaclla_API_TSW.Profiles.Application.Internal.CommandServices;
+using Chaquitaclla_API_TSW.Profiles.Application.Internal.QueryServices;
+using Chaquitaclla_API_TSW.Profiles.Domain.Repositories;
+using Chaquitaclla_API_TSW.Profiles.Domain.Services;
+using Chaquitaclla_API_TSW.Profiles.Infrastructure.Persistence.EFC.Repositories;
+using Chaquitaclla_API_TSW.Shared.Domain.Repositories;
+using  Chaquitaclla_API_TSW.Shared.Interfaces.ASP.Configuration;
+using  Chaquitaclla_API_TSW.Shared.Infrastructure.Persistence.EFC.Configuration;
+using  Chaquitaclla_API_TSW.Shared.Infrastructure.Persistence.EFC.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 
@@ -69,7 +69,7 @@ builder.Services.AddSwaggerGen(
         c.SwaggerDoc("v1",
             new OpenApiInfo
             {
-                Title = "ChaquitacllaError404.API",
+                Title = "Chaquitaclla_API_TSW",
                 Version = "v1",
                 Description = "Chaquitaclla Error 404 Platform API",
                 TermsOfService = new Uri("https://github.com/upc-pre-202401-si730-ws53-Error-404/Web-Services"),

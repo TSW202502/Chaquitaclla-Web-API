@@ -1,3 +1,3 @@
-﻿namespace ChaquitacllaError404.API.Profiles.Domain.Model.Querys;
+namespace Chaquitaclla_API_TSW.Profiles.Domain.Model.Querys;
 
 public record GetAllProfilesQuery();

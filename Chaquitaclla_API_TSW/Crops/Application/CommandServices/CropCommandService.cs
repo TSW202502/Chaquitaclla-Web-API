@@ -1,9 +1,11 @@
-﻿using Chaquitaclla_API_TSW.Crops.Domain.Model.Aggregates;
+using Chaquitaclla_API_TSW.Crops.Domain.Model.Aggregates;
 using Chaquitaclla_API_TSW.Crops.Domain.Model.Commands;
-using Chaquitaclla_API_TSW.Crops.Domain.Model.Entities;
 using Chaquitaclla_API_TSW.Crops.Domain.Repositories;
 using Chaquitaclla_API_TSW.Crops.Domain.Services;
 using Chaquitaclla_API_TSW.Shared.Domain.Repositories;
+using System;
+using System.Threading.Tasks;
+using Chaquitaclla_API_TSW.Crops.Domain.Model.Entities;
 
 namespace Chaquitaclla_API_TSW.Crops.Application.CommandServices;
 
@@ -79,7 +81,7 @@ public class CropCommandService : ICropCommandService
         var sowing = new Sowing
         {
             CropId = crop.Id
-            // Inicializa otras propiedades necesarias aquí
+            // Inicializa otras propiedades necesarias aqu�
         };
 
         await sowingRepository.AddAsync(sowing);

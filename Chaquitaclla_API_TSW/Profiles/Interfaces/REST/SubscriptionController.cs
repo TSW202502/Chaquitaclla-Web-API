@@ -1,10 +1,10 @@
-﻿using System.Net.Mime;
-using ChaquitacllaError404.API.Profiles.Domain.Services;
-using ChaquitacllaError404.API.Profiles.Interfaces.REST.Resources;
-using ChaquitacllaError404.API.Profiles.Interfaces.REST.Transform;
+using System.Net.Mime;
+using Chaquitaclla_API_TSW.Profiles.Domain.Services;
+using Chaquitaclla_API_TSW.Profiles.Interfaces.REST.Resources;
+using Chaquitaclla_API_TSW.Profiles.Interfaces.REST.Transform;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ChaquitacllaError404.API.Profiles.Interfaces.REST;
+namespace Chaquitaclla_API_TSW.Profiles.Interfaces.REST;
 
 [ApiController]
 [Route("api/v1/[controller]")]

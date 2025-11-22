@@ -1,4 +1,4 @@
-﻿using System.Net.Mime;
+using System.Net.Mime;
 using Chaquitaclla_API_TSW.Crops.Domain.Model.Queries;
 using Chaquitaclla_API_TSW.Crops.Domain.Services;
 using Chaquitaclla_API_TSW.Crops.Interfaces.REST.Resources;

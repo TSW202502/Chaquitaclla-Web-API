@@ -1,4 +1,4 @@
-﻿namespace ChaquitacllaError404.API.Profiles.Domain.Model.Entities;
+namespace Chaquitaclla_API_TSW.Profiles.Domain.Model.Entities;
 
 public class Country
 {

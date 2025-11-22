@@ -1,7 +1,7 @@
-﻿using ChaquitacllaError404.API.Profiles.Domain.Model.Commands;
-using ChaquitacllaError404.API.Profiles.Domain.Model.ValueObjects;
+using Chaquitaclla_API_TSW.Profiles.Domain.Model.Commands;
+using Chaquitaclla_API_TSW.Profiles.Domain.Model.ValueObjects;
 
-namespace ChaquitacllaError404.API.Profiles.Domain.Model.Entities;
+namespace Chaquitaclla_API_TSW.Profiles.Domain.Model.Entities;
 
 public class Subscription
 {

@@ -1,9 +1,9 @@
-﻿using ChaquitacllaError404.API.Profiles.Domain.Model.Aggregates;
-using ChaquitacllaError404.API.Profiles.Domain.Model.Querys;
-using ChaquitacllaError404.API.Profiles.Domain.Repositories;
-using ChaquitacllaError404.API.Profiles.Domain.Services;
+using Chaquitaclla_API_TSW.Profiles.Domain.Model.Aggregates;
+using Chaquitaclla_API_TSW.Profiles.Domain.Model.Querys;
+using Chaquitaclla_API_TSW.Profiles.Domain.Repositories;
+using Chaquitaclla_API_TSW.Profiles.Domain.Services;
 
-namespace ChaquitacllaError404.API.Profiles.Application.Internal.QueryServices;
+namespace Chaquitaclla_API_TSW.Profiles.Application.Internal.QueryServices;
 
 public class ProfileQueryService(IProfileRepository profileRepository) : IProfileQueryService
 {

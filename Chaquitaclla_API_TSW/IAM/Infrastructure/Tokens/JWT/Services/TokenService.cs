@@ -1,13 +1,13 @@
 using System.Security.Claims;
 using System.Text;
-using ChaquitacllaError404.API.IAM.Application.Internal.OutboundServices;
-using ChaquitacllaError404.API.IAM.Domain.Model.Aggregates;
-using ChaquitacllaError404.API.IAM.Infrastructure.Tokens.JWT.Configuration;
+using Chaquitaclla_API_TSW.IAM.Application.Internal.OutboundServices;
+using Chaquitaclla_API_TSW.IAM.Domain.Model.Aggregates;
+using Chaquitaclla_API_TSW.IAM.Infrastructure.Tokens.JWT.Configuration;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.JsonWebTokens;
 using Microsoft.IdentityModel.Tokens;
 
-namespace ChaquitacllaError404.API.IAM.Infrastructure.Tokens.JWT.Services;
+namespace Chaquitaclla_API_TSW.IAM.Infrastructure.Tokens.JWT.Services;
 
 public class TokenService(IOptions<TokenSettings> tokenSettings) : ITokenService
 {

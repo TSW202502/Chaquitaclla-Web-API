@@ -1,11 +1,11 @@
-using ChaquitacllaError404.API.IAM.Domain.Model.Aggregates;
-using ChaquitacllaError404.API.IAM.Domain.Repositories;
-using ChaquitacllaError404.API.Shared.Domain.Repositories;
-using ChaquitacllaError404.API.Shared.Infrastructure.Persistence.EFC.Configuration;
-using ChaquitacllaError404.API.Shared.Infrastructure.Persistence.EFC.Repositories;
+using Chaquitaclla_API_TSW.IAM.Domain.Model.Aggregates;
+using Chaquitaclla_API_TSW.IAM.Domain.Repositories;
+using Chaquitaclla_API_TSW.Shared.Domain.Repositories;
+using Chaquitaclla_API_TSW.Shared.Infrastructure.Persistence.EFC.Configuration;
+using Chaquitaclla_API_TSW.Shared.Infrastructure.Persistence.EFC.Repositories;
 using Microsoft.EntityFrameworkCore;
 
-namespace ChaquitacllaError404.API.IAM.Infrastructure.Persistence.EFC.Repositories;
+namespace Chaquitaclla_API_TSW.IAM.Infrastructure.Persistence.EFC.Repositories;
 
 public class UserRepository(AppDbContext context) : BaseRepository<User>(context), IUserRepository 
 {

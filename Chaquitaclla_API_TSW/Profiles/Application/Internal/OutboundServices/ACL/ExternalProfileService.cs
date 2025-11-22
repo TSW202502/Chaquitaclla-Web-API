@@ -1,7 +1,7 @@
-﻿using ChaquitacllaError404.API.Profiles.Domain.Model.ValueObjects;
-using ChaquitacllaError404.API.Profiles.Interfaces.ACL;
+using Chaquitaclla_API_TSW.Profiles.Domain.Model.ValueObjects;
+using Chaquitaclla_API_TSW.Profiles.Interfaces.ACL;
 
-namespace ChaquitacllaError404.API.Profiles.Application.Internal.OutboundServices.ACL;
+namespace Chaquitaclla_API_TSW.Profiles.Application.Internal.OutboundServices.ACL;
 
 public class ExternalProfileService(IProfilesContextFacade profilesContextFacade)
 {

@@ -1,4 +1,4 @@
-﻿namespace ChaquitacllaError404.API.Profiles.Interfaces.ACL;
+namespace Chaquitaclla_API_TSW.Profiles.Interfaces.ACL;
 
 public interface IProfilesContextFacade
 {

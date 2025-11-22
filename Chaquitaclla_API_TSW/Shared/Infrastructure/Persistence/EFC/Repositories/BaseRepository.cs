@@ -1,4 +1,4 @@
-﻿using Chaquitaclla_API_TSW.Shared.Domain.Repositories;
+using Chaquitaclla_API_TSW.Shared.Domain.Repositories;
 using Chaquitaclla_API_TSW.Shared.Infrastructure.Persistence.EFC.Configuration;
 using Microsoft.EntityFrameworkCore;
 

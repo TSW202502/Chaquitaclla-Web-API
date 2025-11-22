@@ -1,9 +1,9 @@
-using ChaquitacllaError404.API.IAM.Domain.Model.Aggregates;
-using ChaquitacllaError404.API.IAM.Domain.Model.Queries;
-using ChaquitacllaError404.API.IAM.Domain.Repositories;
-using ChaquitacllaError404.API.IAM.Domain.Services;
+using Chaquitaclla_API_TSW.IAM.Domain.Model.Aggregates;
+using Chaquitaclla_API_TSW.IAM.Domain.Model.Queries;
+using Chaquitaclla_API_TSW.IAM.Domain.Repositories;
+using Chaquitaclla_API_TSW.IAM.Domain.Services;
 
-namespace ChaquitacllaError404.API.IAM.Application.Internal.QueryServices;
+namespace Chaquitaclla_API_TSW.IAM.Application.Internal.QueryServices;
 
 public class UserQueryService(IUserRepository userRepository) : IUserQueryService
 {

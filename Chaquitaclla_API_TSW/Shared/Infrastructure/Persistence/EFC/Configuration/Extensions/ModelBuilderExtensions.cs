@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 
 namespace Chaquitaclla_API_TSW.Shared.Infrastructure.Persistence.EFC.Configuration.Extensions;
 

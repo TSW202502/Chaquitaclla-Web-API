@@ -1,9 +1,9 @@
-﻿using ChaquitacllaError404.API.Profiles.Domain.Model.Commands;
-using ChaquitacllaError404.API.Profiles.Domain.Model.Querys;
-using ChaquitacllaError404.API.Profiles.Domain.Model.ValueObjects;
-using ChaquitacllaError404.API.Profiles.Domain.Services;
+using Chaquitaclla_API_TSW.Profiles.Domain.Model.Commands;
+using Chaquitaclla_API_TSW.Profiles.Domain.Model.Querys;
+using Chaquitaclla_API_TSW.Profiles.Domain.Model.ValueObjects;
+using Chaquitaclla_API_TSW.Profiles.Domain.Services;
 
-namespace ChaquitacllaError404.API.Profiles.Interfaces.ACL.Services;
+namespace Chaquitaclla_API_TSW.Profiles.Interfaces.ACL.Services;
 
 public class ProfilesContextFacade(IProfileCommandService profileCommandService, IProfileQueryService profileQueryService) : IProfilesContextFacade
 {

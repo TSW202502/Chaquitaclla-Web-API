@@ -1,7 +1,7 @@
-﻿using ChaquitacllaError404.API.Profiles.Domain.Model.Aggregates;
-using ChaquitacllaError404.API.Profiles.Domain.Model.Querys;
+using Chaquitaclla_API_TSW.Profiles.Domain.Model.Aggregates;
+using Chaquitaclla_API_TSW.Profiles.Domain.Model.Querys;
 
-namespace ChaquitacllaError404.API.Profiles.Domain.Services;
+namespace Chaquitaclla_API_TSW.Profiles.Domain.Services;
 
 public interface IProfileQueryService
 {
