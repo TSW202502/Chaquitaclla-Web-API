@@ -1,6 +1,0 @@
-@Chaquitaclla_API_TSW_HostAddress = http://localhost:5255
-
-GET {{Chaquitaclla_API_TSW_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
